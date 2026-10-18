@@ -1,24 +1,40 @@
 package co.edu.unipiloto.listviewsandadapters;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> listView, View itemView, int position, long id) {
+                if (position == 0){
+                    Intent intent = new Intent(MainActivity.this, CursosCategoryActivity.class);
+                    startActivity(intent);
+                }
+                if (position == 1){
+                    Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
+                    startActivity(intent);
+                }
+                if (position == 2){
+                    Intent intent = new Intent(MainActivity.this, EvaluacionesActivity.class);
+                    startActivity(intent);
+                }
+                if (position == 3){
+                    Intent intent = new Intent(MainActivity.this, NotasActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
+        ListView listView = (ListView) findViewById(R.id.list_options);
+        listView.setOnItemClickListener(itemClickListener);
     }
 }

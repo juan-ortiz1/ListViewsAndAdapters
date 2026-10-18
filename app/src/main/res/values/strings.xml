@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ListViewsAndAdapters</string>
+    <string name="mentum_logo">Mentum Logo</string>
+    <string-array name="options">
+        <item>Cursos</item>
+        <item>Perfil</item>
+        <item>Evaluaciones</item>
+        <item>Notas</item>
+    </string-array>
 </resources>
