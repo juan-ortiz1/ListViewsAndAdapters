@@ -21,15 +21,15 @@ public class MainActivity extends Activity {
                     startActivity(intent);
                 }
                 if (position == 1){
-                    Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
+                    Intent intent = new Intent(MainActivity.this, PerfilCategoryActivity.class);
                     startActivity(intent);
                 }
                 if (position == 2){
-                    Intent intent = new Intent(MainActivity.this, EvaluacionesActivity.class);
+                    Intent intent = new Intent(MainActivity.this, EvaluacionesCategoryActivity.class);
                     startActivity(intent);
                 }
                 if (position == 3){
-                    Intent intent = new Intent(MainActivity.this, NotasActivity.class);
+                    Intent intent = new Intent(MainActivity.this, NotasCategoryActivity.class);
                     startActivity(intent);
                 }
             }

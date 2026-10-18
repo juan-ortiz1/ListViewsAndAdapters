@@ -26,7 +26,19 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".PerfilActivity"
+            android:name=".PerfilCategoryActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".EvaluacionesCategoryActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".NotasCategoryActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".CursosActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -38,7 +50,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".CursosActivity"
+            android:name=".PerfilActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

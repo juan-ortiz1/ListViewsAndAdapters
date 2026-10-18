@@ -1,24 +1,28 @@
 package co.edu.unipiloto.listviewsandadapters;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+public class EvaluacionesActivity extends Activity {
 
-public class EvaluacionesActivity extends AppCompatActivity {
+    public static final String EXTRA_EVALUACIONID = "evaluacionId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_evaluaciones);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        setContentView(R.layout.activity_evaluaciones2);
+
+        int evaluacionId = getIntent().getIntExtra(EXTRA_EVALUACIONID, 0);
+        Evaluacion evaluacion = Evaluacion.evaluaciones[evaluacionId];
+
+        TextView nombre = findViewById(R.id.nombre);
+        nombre.setText(evaluacion.getNombre());
+        TextView descripcion = findViewById(R.id.descripcion);
+        descripcion.setText(evaluacion.getDescripcion());
+        TextView puntaje = findViewById(R.id.puntaje);
+        puntaje.setText(String.valueOf(evaluacion.getPuntaje()));
+        TextView fecha = findViewById(R.id.fecha);
+        fecha.setText(evaluacion.getFecha());
     }
 }
